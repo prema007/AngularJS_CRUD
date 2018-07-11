@@ -1,4 +1,4 @@
-app.controller('MainCtrl', function ($scope, $http, $location, $rootScope) {
+app.controller('MainCtrl', function ($scope, $http, $location, $rootScope,$window) {
     debugger;
     $http.get("userdetails.json")
         .then(function (response) {
@@ -35,14 +35,20 @@ app.controller('MainCtrl', function ($scope, $http, $location, $rootScope) {
     $scope.delete = function (id) {
         debugger;
         var id = id;
-         $http.post('php/delete.php', id).
-            success(function (id) {
+         $http.get('php/delete.php?id='+id).
+            success(function (data) {
              //var id = id;
-            $scope.showout = true;
-            $scope.output=id;
+            //$scope.showout = true;
+            $scope.output=data;
+            if($scope.output == 'Deleted')
+                {
+                    alert("Successfully Deleted");
+
+                   $window.location.reload();
+                }
 
                 console.log("posted successfully");
-            }).error(function (id) {
+            }).error(function (data) {
                 console.error("error in posting");
             })
     }

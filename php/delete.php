@@ -1,18 +1,21 @@
 <?php
 //if(isset($_GET['id'])){
 
-$id = $_POST['id'];
+$id = $_GET['id'];
+//echo $id;
 
-echo $id;
 $str = file_get_contents('../userdetails.json');
 $array = json_decode($str, true);
 foreach ($array as $k => $v) {
-    echo $k;
+    //echo $k;
+
     // IF THE TITLE MATCHES THE SIGNAL STRING
-    if ($k == $id)
+    if ($v['id'] == $id)
     {
+
         // REMOVE THIS OBJECT
         unset($array[$k]);
+        echo "Deleted";
 
     }
 }
@@ -20,5 +23,6 @@ foreach ($array as $k => $v) {
 //file_put_contents('results.json', $newJsonString);
 $fp = fopen('../userdetails.json', 'w');
 fwrite($fp, json_encode($array));
+
 //}
 ?>
