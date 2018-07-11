@@ -1,7 +1,7 @@
 var app = angular.module("app", ["ngRoute"]);
 app.config(function ($routeProvider) {
     $routeProvider
-   
+
     .when("/userdetails", {
         templateUrl: "userdetails.html",
         controller : "MainCtrl"
@@ -16,7 +16,7 @@ app.config(function ($routeProvider) {
         templateUrl: "register.html",
         controller : "RegisterCtrl"
     })
-    
+
     .when("/adduser", {
         templateUrl: "adduser.html",
         controller : "UserAddCtrl"

@@ -2,7 +2,7 @@
 //if(isset($_GET['id'])){
 
 $id = $_POST['id'];
-   
+
 echo $id;
 $str = file_get_contents('../userdetails.json');
 $array = json_decode($str, true);
@@ -13,7 +13,7 @@ foreach ($array as $k => $v) {
     {
         // REMOVE THIS OBJECT
         unset($array[$k]);
-        
+
     }
 }
 //$newJsonString = json_encode($data);
