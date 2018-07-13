@@ -1,0 +1,10 @@
+<div ng-app="app" ng-controller="EditUserCtrl">
+    <input type="hidden" id="userid" ng-model="id" name="id" ><br>
+    Username: <input type="text" id="username" ng-model="username" name="username" ><br><br>
+    Email: <input type="text" id="email" ng-model="email" name="email"><br><br>
+    Password: <input type="text" id="password" ng-model="password" name="password"><br><br>
+    <input type="submit" value="Update" ng-click="update(id,username,email,password)"> &nbsp;
+    <input type="button" value="Back" ng-click="back()">
+    <!--<a href="#register">Create New account</a>-->
+
+</div>

@@ -14,11 +14,11 @@
                 <td>{{ x.username }}</td>
                 <td>{{ x.email }}</td>
                 <td>{{ x.password }}</td>
-                <td><input type="button" value="Delete" ng-click="delete(x.id)"> | <input type="button" value="Edit" ng-click="edituser()"> </td>
+                <td><input type="button" value="Delete" ng-click="delete(x.id)"> | <input type="button" value="Edit" ng-click="edit(x.id, x.username, x.email, x.password)"> </td>
             </tr>
         </table>
 
-         <!--<a href="#adduser">Create New User</a>-->
+         <!--<a href="#adduser">Create New User</a>--><br>
         <input type="button" value="Add" ng-click="adduser()">
 
 

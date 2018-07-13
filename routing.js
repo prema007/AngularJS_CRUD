@@ -22,6 +22,11 @@ app.config(function ($routeProvider) {
         controller : "UserAddCtrl"
     })
 
+    .when("/edituser", {
+        templateUrl: "edituser.html",
+        controller : "EditUserCtrl"
+    })
+
     .otherwise({
         redirectTo: '/userdetails'
     });
